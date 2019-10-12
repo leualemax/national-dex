@@ -1,22 +1,47 @@
 import * as React from 'react';
-import './App.css';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as PokemonActions from "./actions/pokemon.actions";
+import Pokemon from './components/pokemon.component';
+import IDex from "./models/dex.model";
 
-import logo from './logo.svg';
+import './App.scss';
 
-class App extends React.Component {
+interface IAppProps {
+  dex: IDex,
+  fetchPokemon: (id:number) => any
+}
+
+export class App extends React.Component<IAppProps> {
+  constructor(public props: IAppProps) {
+    super(props);
+    this.props.fetchPokemon(376);
+  }
+
   public render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <Pokemon selected={this.props.dex.pokemon} />
       </div>
     );
   }
 }
 
-export default App;
+export const mapStateToProps = (state: IDex) => {
+  return {
+    dex: state
+  }
+};
+
+export const mapDispatchToProps = (dispatch: any) =>
+  bindActionCreators(
+    {
+      ...PokemonActions
+    },
+    dispatch
+  );
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

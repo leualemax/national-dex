@@ -1,0 +1,12 @@
+{
+  "id": 0,
+  "height": 0,
+  "name": "Missingno",
+  "weight": 0,
+  "sprites": {
+      "front_default": "https://www.seekpng.com/png/full/343-3434964_missingno-sprite.png"
+  },
+  "abilities": [],
+  "types": [],
+  "stats": []
+}
