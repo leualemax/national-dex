@@ -19,3 +19,7 @@ yarn start
 ```sh
 yarn run test
 ```
+
+
+### Erros
+- habilidade não é movimento

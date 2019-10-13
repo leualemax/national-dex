@@ -1,7 +1,6 @@
-import IAbility from './ability.model';
+import IType from './type.model';
 
 export default interface IPokemonType {
-    ability: IAbility;
-    is_hidden: boolean
+    type: IType;
     slot: number
 }

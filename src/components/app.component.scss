@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Visitor';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../visitor1.ttf') format('truetype')
+}
+
+body {
+  font-family: 'Visitor';
+}
+
+h5{
+  margin: 0px 4px;
+  font-size: 18px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 4px;
+}
+
+select.block {
+  background-color: #FFF;
+  border-top: 2px solid rgb(196, 196, 196);
+  border-bottom: 2px solid rgb(39, 39, 39);
+  font-family: 'Visitor';
+  font-size: 18px;
+  width: 100%;
+
+  &:before {
+    background-color: rgb(196, 196, 196);
+  }
+
+  &:after {
+    background-color: rgb(39, 39, 39);
+  }
+}
+
+.block{
+  background-color: #D2D5C2;
+  border-radius: 2px;
+  display: block;
+  box-sizing: border-box;
+  padding: 8px;
+  border-top: 2px solid rgb(196, 197, 185);
+  border-bottom: 2px solid rgb(150, 151, 140);
+  position: relative;
+  
+  &:before, &:after {
+    content: '';
+    top: 0;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+  }
+  
+  &:before {
+    left: -2px;
+    background-color: rgb(196, 197, 185);
+  }
+
+  &:after {
+    right: -2px;
+    background-color: rgb(150, 151, 140);
+  }
+}

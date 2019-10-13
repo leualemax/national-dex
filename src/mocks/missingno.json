@@ -6,7 +6,58 @@
   "sprites": {
       "front_default": "https://www.seekpng.com/png/full/343-3434964_missingno-sprite.png"
   },
-  "abilities": [],
-  "types": [],
-  "stats": []
+  "moves": [
+    {
+      "move": {
+        "name": "light-metal", 
+        "url": "https://pokeapi.co/api/v2/ability/0"
+      }
+    }
+  ],
+  "species":{
+    "url": "https://pokeapi.co/api/v2/pokemon-species/133",
+    "evolution_chain": {
+      "url": "https://pokeapi.co/api/v2/evolution-chain/1"
+    },
+    "flavor_text_entries": [
+      {
+        "flavor_text": "日なたで　昼寝を　する　姿を　見かける。↵太陽の　光を　いっぱい　浴びることで↵背中の　タネが　大きく　育つのだ。",
+        "language": {"name": "en"}
+      }
+    ]
+  },
+  "types": [
+    {
+      "type": {
+        "name": "metal", 
+        "url": "https://pokeapi.co/api/v2/type/135"
+      },
+      "slot": 3
+    },
+    {
+      "type": {
+        "name": "grass", 
+        "url": "https://pokeapi.co/api/v2/type/135"
+      },
+      "slot": 2
+    }
+  ],
+  "stats": [
+    {
+      "base_stat": 70,
+      "effort": 0,
+      "stat": {
+        "name": "speed",
+        "url": "https://pokeapi.co/api/v2/stat/6"
+      }
+    },
+    {
+      "base_stat": 72,
+      "effort": 2,
+      "stat": {
+        "name": "speed 2",
+        "url": "https://pokeapi.co/api/v2/stat/6"
+      }
+    }
+  ]
 }

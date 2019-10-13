@@ -1,6 +1,8 @@
-import IPokemonAbility from './pokemon.ability.model';
+import IEvolution from './evolution.model';
+import IPokemonMove from './pokemon.move.model';
 import IPokemonStat from './pokemon.stat.model';
 import IPokemonType from './pokemon.type.model';
+
 
 export default interface IPokemon {
     id: number;
@@ -10,7 +12,13 @@ export default interface IPokemon {
     sprites: {
         front_default: string;
     },
-    abilities: IPokemonAbility[],
+    species?: {
+       url: string,
+       flavor_text_entries: any
+    },
+    evolutions?: IEvolution,
+    description?: string;
+    moves: IPokemonMove[],
     types: IPokemonType[],
     stats: IPokemonStat[]
 }

@@ -29,4 +29,26 @@
       }
     }
   }
+  .types {
+    margin: 4px 0px;
+    .type {
+      background-color: rgb(150, 151, 140);
+      border-radius:  3px;
+      padding: 2px 4px;
+      margin: 2px;
+    }
+  }
+  .stats, .moves, .evolutions, .description {
+    margin: 4px;
+    text-align: justify;
+  }
+  .stats{
+    span{
+      display: block;
+      width: 100%;
+      i {
+        float: right;
+      }
+    }
+  }
 }
