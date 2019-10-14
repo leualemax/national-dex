@@ -5,10 +5,10 @@
     {
       "effect": "Inflicts regular damage.  Has a $effect_chance% chance to burn the target.",
       "language": {
-          "name": "en",
-          "url": "https://pokeapi.co/api/v2/language/9/"
+        "name": "en",
+        "url": "https://pokeapi.co/api/v2/language/9/"
       },
       "short_effect": "Has a $effect_chance% chance to burn the target."
-  }
+    }
   ]
 }

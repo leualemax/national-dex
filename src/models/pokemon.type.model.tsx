@@ -1,6 +1,6 @@
-import IType from './type.model';
+import IType from "./type.model";
 
 export default interface IPokemonType {
-    type: IType;
-    slot: number
+  type: IType;
+  slot: number;
 }

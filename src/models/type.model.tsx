@@ -1,4 +1,4 @@
 export default interface IType {
-    url: string;
-    name: string;
+  url: string;
+  name: string;
 }

@@ -1,5 +1,5 @@
-import IMove from './move.model';
+import IMove from "./move.model";
 
 export default interface IPokemonMove {
-    move: IMove;
+  move: IMove;
 }

@@ -1,56 +1,58 @@
 {
-  "name": "national-dex",
-  "version": "1.0.0",
-  "private": true,
-  "engines": {
-    "node": "^10.16",
-    "npm": "^6.9"
-  },
-  "dependencies": {
-    "axios": "^0.19.0",
-    "node-sass": "^4.12.0",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-redux": "^7.1.1",
-    "react-scripts": "3.2.0",
-    "redux": "^4.0.4",
-    "redux-promise": "^0.6.0",
-    "redux-thunk": "^2.3.0",
-    "typescript": "^3.6.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "lint": "tslint -c tslint.json 'src/**/*.tsx'",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/jest": "^24.0.18",
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^12.7.12",
-    "@types/react": "^16.9.5",
-    "@types/react-dom": "^16.9.1",
-    "@types/react-redux": "^7.1.4",
-    "@types/redux-promise": "^0.5.28",
-    "axios-mock-adapter": "^1.17.0",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.15.1",
-    "tslint": "^5.20.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-react": "^4.1.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "national-dex",
+	"version": "1.0.0",
+	"private": true,
+	"engines": {
+		"node": "^10.16",
+		"npm": "^6.9"
+	},
+	"dependencies": {
+		"axios": "^0.19.0",
+		"node-sass": "^4.12.0",
+		"react": "^16.10.2",
+		"react-dom": "^16.10.2",
+		"react-redux": "^7.1.1",
+		"react-scripts": "3.2.0",
+		"redux": "^4.0.4",
+		"redux-promise": "^0.6.0",
+		"redux-thunk": "^2.3.0",
+		"typescript": "^3.6.3"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"lint": "tslint -c tslint.json 'src/**/*.tsx'",
+		"format": "prettier --write \"src/**/*.+(js|jsx|tsx|ts|json|css|scss|md)\"",
+		"eject": "react-scripts eject"
+	},
+	"devDependencies": {
+		"@types/enzyme-adapter-react-16": "^1.0.5",
+		"@types/jest": "^24.0.18",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.7.12",
+		"@types/react": "^16.9.5",
+		"@types/react-dom": "^16.9.1",
+		"@types/react-redux": "^7.1.4",
+		"@types/redux-promise": "^0.5.28",
+		"axios-mock-adapter": "^1.17.0",
+		"enzyme": "^3.10.0",
+		"enzyme-adapter-react-16": "^1.15.1",
+		"prettier": "^1.18.2",
+		"tslint": "^5.20.0",
+		"tslint-config-prettier": "^1.18.0",
+		"tslint-react": "^4.1.0"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
 }

@@ -1,23 +1,25 @@
 @font-face {
-  font-family: 'Visitor';
+  font-family: "Visitor";
   font-style: normal;
   font-weight: 400;
-  src: url('../visitor1.ttf') format('truetype')
+  src: url("../visitor1.ttf") format("truetype");
 }
 
 body {
-  font-family: 'Visitor';
+  font-family: "Visitor";
   text-align: center;
-  p{
+  p {
     color: #fff;
   }
   a {
-    color: #333
+    color: #333;
   }
 }
 
 // RESETS
-*:focus {outline:0;}
+*:focus {
+  outline: 0;
+}
 
 // DEFAULT
 .App {
@@ -28,7 +30,7 @@ body {
   flex-direction: row;
   position: relative;
   margin: 10px auto;
-  .nav{
+  .nav {
     width: 40%;
     min-width: 248px;
     margin: 0px 8px 0px 0px;
@@ -36,7 +38,7 @@ body {
     flex-direction: column;
     align-items: center;
   }
-  .pokemon{
+  .pokemon {
     margin: 0px 0px 0px 8px;
     width: 60%;
     min-width: 376px;
@@ -51,7 +53,8 @@ body {
     flex-direction: column;
     padding: 8px;
     margin: 0px;
-    .nav , .pokemon{
+    .nav,
+    .pokemon {
       width: calc(100vw - 16px);
       min-width: calc(100vw - 16px);
       margin: 0px;
@@ -59,7 +62,7 @@ body {
   }
 }
 
-h5{
+h5 {
   margin: 10px 4px;
   font-size: 18px;
   padding-bottom: 4px;
