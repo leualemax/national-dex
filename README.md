@@ -4,14 +4,17 @@ Hello there!
 
 Welcome to The National Dex.
 
-A simple Webapp that's cosume the pokeapi.co.
+A simple Webapp that's cosume the [pokeapi](pokeapi.co).
 
 Initially this app was developed as a code challenge to for a job application, but i've such a fun time doing it, so i've decided to expand it.
+
+You can access the dex here: http://dex.alemax.live (courtesy of of [netlify](https://github.com/prettier/prettier))
 
 ---
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![codecov](https://codecov.io/gh/leualemax/national-dex/branch/master/graph/badge.svg)](https://codecov.io/gh/leualemax/national-dex)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/539028dd-c57b-4146-885d-8a104001138b/deploy-status)](https://app.netlify.com/sites/alemax-national-dex/deploys)
 
 ---
 
