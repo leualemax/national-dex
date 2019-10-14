@@ -1,20 +1,19 @@
 import axios, { AxiosPromise } from "axios";
 
 export default class PokemonService {
-  public static fetch(id: number): AxiosPromise<any[]> {
-    const url: string = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    return axios.get(url);
+  public static pokemon(query?: string): AxiosPromise<any[]> {
+    return this.get(`https://pokeapi.co/api/v2/pokemon/${query ? query : '?limit=1000'}`);
   }
 
-  public static specie(url: string): AxiosPromise<any[]> {
-    return axios.get(url);
+  public static type(query?: string): AxiosPromise<any[]> {
+    return this.get(`https://pokeapi.co/api/v2/type/${query ? query : '?limit=200'}`);
   }
 
-  public static evolutions(url: string): AxiosPromise<any[]> {
-    return axios.get(url);
+  public static byName(name?: string): AxiosPromise<any[]> {
+    return this.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }
-
-  public static move(url: string): AxiosPromise<any[]> {
+  
+  public static get(url: string): AxiosPromise<any[]> {
     return axios.get(url);
   }
 }

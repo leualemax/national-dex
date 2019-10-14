@@ -7,57 +7,61 @@
 
 body {
   font-family: 'Visitor';
+  text-align: center;
+  p{
+    color: #fff;
+  }
+  a {
+    color: #333
+  }
+}
+
+// RESETS
+*:focus {outline:0;}
+
+// DEFAULT
+.App {
+  width: 60%;
+  min-width: 640px;
+  height: 820px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin: 10px auto;
+  .nav{
+    width: 40%;
+    min-width: 248px;
+    margin: 0px 8px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pokemon{
+    margin: 0px 0px 0px 8px;
+    width: 60%;
+    min-width: 376px;
+  }
+}
+// RESPONSIVE
+
+@media only screen and (max-width: 590px) {
+  .App {
+    width: calc(100vw - 16px);
+    min-width: calc(100vw - 16px);
+    flex-direction: column;
+    padding: 8px;
+    margin: 0px;
+    .nav , .pokemon{
+      width: calc(100vw - 16px);
+      min-width: calc(100vw - 16px);
+      margin: 0px;
+    }
+  }
 }
 
 h5{
-  margin: 0px 4px;
+  margin: 10px 4px;
   font-size: 18px;
-  border-bottom: 1px solid #333;
   padding-bottom: 4px;
-}
-
-select.block {
-  background-color: #FFF;
-  border-top: 2px solid rgb(196, 196, 196);
-  border-bottom: 2px solid rgb(39, 39, 39);
-  font-family: 'Visitor';
-  font-size: 18px;
-  width: 100%;
-
-  &:before {
-    background-color: rgb(196, 196, 196);
-  }
-
-  &:after {
-    background-color: rgb(39, 39, 39);
-  }
-}
-
-.block{
-  background-color: #D2D5C2;
-  border-radius: 2px;
-  display: block;
-  box-sizing: border-box;
-  padding: 8px;
-  border-top: 2px solid rgb(196, 197, 185);
-  border-bottom: 2px solid rgb(150, 151, 140);
-  position: relative;
-  
-  &:before, &:after {
-    content: '';
-    top: 0;
-    width: 2px;
-    height: 100%;
-    position: absolute;
-  }
-  
-  &:before {
-    left: -2px;
-    background-color: rgb(196, 197, 185);
-  }
-
-  &:after {
-    right: -2px;
-    background-color: rgb(150, 151, 140);
-  }
+  text-align: left;
 }

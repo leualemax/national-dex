@@ -12,7 +12,9 @@ it('renders without crashing', () => {
   const props = {
     selected:  Missingno,
     changeMove: jest.fn(),
-    loadEvolution: jest.fn()
+    loadEvolution: jest.fn(),
+    changePokemon: jest.fn(),
+    changeType: jest.fn()
   }
 
   const enzymeWrapper = shallow(<Pokemon {...props} />)
@@ -20,7 +22,10 @@ it('renders without crashing', () => {
   const pokemon = enzymeWrapper.find('.pokemon')
   expect(pokemon.find('h3').text()).toEqual(`${Missingno.id} - ${Missingno.name}`)
   expect(pokemon.find('img').props().src).toEqual(Missingno.sprites.front_default)
-
+  expect(props.loadEvolution).not.toBeCalled()
+  expect(props.changePokemon).not.toBeCalled()
+  expect(props.changeType).not.toBeCalled()
+  expect(props.changeMove).not.toBeCalled()
 });
 
 it('renders with description', () => {
@@ -30,7 +35,9 @@ it('renders with description', () => {
       description: "日なたで　昼寝を　する　姿を　見かける。↵太陽の　光を"
     },
     changeMove: jest.fn(),
-    loadEvolution: jest.fn()
+    loadEvolution: jest.fn(),
+    changePokemon: jest.fn(),
+    changeType: jest.fn()
   }
 
   const enzymeWrapper = shallow(<Pokemon {...props} />)

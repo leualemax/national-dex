@@ -2,7 +2,11 @@
   width: 260px;
   margin: 4px;
   display: flex;
+  text-align: left;
   flex-direction: column;
+  p{
+    color: #333;
+  }
   .title{ 
     margin: 4px;
     text-transform: capitalize;
@@ -20,6 +24,7 @@
         height: 100px;
       }
     }
+
     .physics {
       width:  100%;
 

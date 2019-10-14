@@ -11,6 +11,7 @@ Enzyme.configure({ adapter: new Adapter() })
 it('renders without crashing', () => {
   const props = {
     types:  Missingno.types,
+    onChange: jest.fn()
   }
 
   const enzymeWrapper = shallow(<PokemonTypes {...props} />)

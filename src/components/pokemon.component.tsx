@@ -13,6 +13,8 @@ import "./pokemon.component.scss";
 interface IPokemonProps {
   selected: IPokemon,
   moveEffect?: string,
+  changeType: (type: string ) => any
+  changePokemon: (type: string ) => any
   changeMove: (url: string | undefined) => any
 }
 
@@ -31,20 +33,24 @@ export default class Pokemon extends React.Component<IPokemonProps>  {
           <div className="block sprite">
             <img src={this.props.selected.sprites.front_default} alt=""/>
           </div>
-          <div className="block physics">
-            <span> Height: {this.props.selected.height} </span>
-            <span> Weight: {this.props.selected.weight} </span>
-          </div>
+          { 
+            this.props.selected.description && 
+            <div className="block description">
+              {this.props.selected.description}
+            </div> 
+          }
         </div>
 
-        { 
-          this.props.selected.description && 
-          <div className="block description">
-            {this.props.selected.description}
-          </div> 
-        }
+        <div className="block physics stats">
+            <span> Height: <i>{this.props.selected.height}</i>  </span>
+            <span> Weight: <i>{this.props.selected.weight}</i>  </span>
+          </div>
         
-        <PokemonTypes types={this.props.selected.types} />
+        
+        <PokemonTypes 
+            types={this.props.selected.types} 
+            onChange={this.props.changeType}
+        />
 
         <h5>Stats</h5>
         <PokemonStats stats={this.props.selected.stats} />
@@ -55,7 +61,8 @@ export default class Pokemon extends React.Component<IPokemonProps>  {
                       effect={this.props.moveEffect} />
 
         <h5>Evolution Chain</h5>
-        <PokemonEvolutions evolutions={this.props.selected.evolutions} />
+        <PokemonEvolutions evolutions={this.props.selected.evolutions} 
+                           onChange={this.props.changePokemon}/>
       </div>
     );
   }

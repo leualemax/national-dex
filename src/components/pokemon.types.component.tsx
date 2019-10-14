@@ -3,6 +3,7 @@ import IPokemonType from 'src/models/pokemon.type.model';
 
 interface IPokemonMovesProps {
   types: IPokemonType[],
+  onChange: (e: any) => void
 }
 
 export default class PokemonMoves extends React.Component<IPokemonMovesProps>  {  
@@ -16,7 +17,7 @@ export default class PokemonMoves extends React.Component<IPokemonMovesProps>  {
       {
         this.props.types.map((element, key) => {
           return (
-          <button key={key} className="type">
+          <button  key={key} onClick={this.props.onChange} className="type" value={element.type.name}>
             {element.type.name}
           </button>);
         })

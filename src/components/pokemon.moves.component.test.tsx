@@ -53,7 +53,7 @@ it('renders and simulate a change', () => {
   select.simulate('change', { target: { value: 'https://pokeapi.co/api/v2/move/0' }});
   
   expect(option.text()).toEqual("light-metal")
-  expect(props.onChange.mock.calls[0][0]).toEqual("https://pokeapi.co/api/v2/move/0")
+  expect(props.onChange).toBeCalledWith("https://pokeapi.co/api/v2/move/0")
 });
 
 it('renders and simulate a change to the placehold item', () => {
@@ -72,5 +72,5 @@ it('renders and simulate a change to the placehold item', () => {
   select.simulate('change', { target: { value: 'select' }});
   
   expect(option.text()).toEqual("light-metal")
-  expect(props.onChange.mock.calls[0][0]).toBeUndefined()
+  expect(props.onChange).toBeCalledWith(undefined)
 });
