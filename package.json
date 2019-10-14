@@ -20,8 +20,10 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
+		"build": "yarn run test && react-scripts build",
+		"test:dev": "react-scripts test --coverage",
+		"test": "react-scripts test --coverage --watchAll=false && codecov",
+		"postest": "codecov",
 		"lint": "tslint -c tslint.json 'src/**/*.tsx'",
 		"format": "prettier --write \"src/**/*.+(js|jsx|tsx|ts|json|css|scss|md)\"",
 		"eject": "react-scripts eject"
@@ -36,6 +38,7 @@
 		"@types/react-redux": "^7.1.4",
 		"@types/redux-promise": "^0.5.28",
 		"axios-mock-adapter": "^1.17.0",
+		"codecov": "^3.6.1",
 		"enzyme": "^3.10.0",
 		"enzyme-adapter-react-16": "^1.15.1",
 		"prettier": "^1.18.2",

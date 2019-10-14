@@ -11,6 +11,7 @@ Initially this app was developed as a code challenge to for a job application, b
 ---
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![codecov](https://codecov.io/gh/leualemax/national-dex/branch/master/graph/badge.svg)](https://codecov.io/gh/leualemax/national-dex)
 
 ---
 
