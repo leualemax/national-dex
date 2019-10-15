@@ -1,23 +1,37 @@
 import axios, { AxiosPromise } from "axios";
+export default class PokeApi {
+	public static base = "https://pokeapi.co/api/v2";
 
-export default class PokemonService {
-  public static pokemon(query?: string): AxiosPromise<any[]> {
-    return this.get(
-      `https://pokeapi.co/api/v2/pokemon/${query ? query : "?limit=1000"}`
-    );
-  }
+	public static get(url: string): AxiosPromise<any[]> {
+		return axios.get(url);
+	}
 
-  public static type(query?: string): AxiosPromise<any[]> {
-    return this.get(
-      `https://pokeapi.co/api/v2/type/${query ? query : "?limit=200"}`
-    );
-  }
+	public static pokemon() {
+		return {
+			all: (limit?: number) => {
+				return PokeApi.get(
+					`${PokeApi.base}/pokemon/${limit ? `?limit=${limit}` : ""}`
+				);
+			},
+			find: (id: number) => {
+				return PokeApi.get(`${PokeApi.base}/pokemon/${id}`);
+			},
+			find_by_name: (name: string) => {
+				return PokeApi.get(`${PokeApi.base}/pokemon/${name}`);
+			}
+		};
+	}
 
-  public static byName(name?: string): AxiosPromise<any[]> {
-    return this.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
-  }
-
-  public static get(url: string): AxiosPromise<any[]> {
-    return axios.get(url);
-  }
+	public static type() {
+		return {
+			all: (limit?: number) => {
+				return PokeApi.get(
+					`${PokeApi.base}/type/${limit ? `?limit=${limit}` : ""}`
+				);
+			},
+			find_by_name: (name: string) => {
+				return PokeApi.get(`${PokeApi.base}/type/${name}`);
+			}
+		};
+	}
 }

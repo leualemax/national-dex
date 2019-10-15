@@ -19,22 +19,26 @@ mock.onGet("https://pokeapi.co/api/v2/pokemon/missingno").reply(200, Missingno);
 
 mock.onGet("https://pokeapi.co/api/v2/pokemon/?limit=1000").reply(200, List);
 
+mock.onGet("https://pokeapi.co/api/v2/pokemon/").reply(200, List);
+
 mock.onGet("https://pokeapi.co/api/v2/pokemon/404").reply(404, {});
 
 mock.onGet("https://pokeapi.co/api/v2/type/grass").reply(200, Type);
 
 mock.onGet("https://pokeapi.co/api/v2/type/?limit=200").reply(200, Types);
 
+mock.onGet("https://pokeapi.co/api/v2/type/").reply(200, Types);
+
 mock.onGet("https://pokeapi.co/api/v2/type/404").reply(404, {});
 
 mock.onGet("https://pokeapi.co/api/v2/move/0").reply(200, Move);
 
 mock
-  .onGet("https://pokeapi.co/api/v2/pokemon-species/133")
-  .reply(200, Missingno.species);
+	.onGet("https://pokeapi.co/api/v2/pokemon-species/133")
+	.reply(200, Missingno.species);
 
 mock.onGet("https://pokeapi.co/api/v2/pokemon-species/404").reply(404, {});
 
 mock
-  .onGet("https://pokeapi.co/api/v2/evolution-chain/1")
-  .reply(200, Missingno.evolutions);
+	.onGet("https://pokeapi.co/api/v2/evolution-chain/1")
+	.reply(200, Missingno.evolutions);

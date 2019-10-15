@@ -3,55 +3,51 @@ import Missingno from "src/mocks/missingno.json";
 import Move from "src/mocks/move.json";
 import Type from "src/mocks/type.json";
 import Types from "src/mocks/types.json";
-import PokemonService from "./pokemon.service";
+import PokeApi from "./pokemon.service";
 
 describe("Pokemon Service", () => {
-  it("should call [get] pokemon", done => {
-    PokemonService.get("https://pokeapi.co/api/v2/pokemon/0").then(response => {
-      expect(response.data).toEqual(Missingno);
-      done();
-    });
-  });
+	it("should call a pokemon with number 0", async () => {
+		const response = await PokeApi.get("https://pokeapi.co/api/v2/pokemon/0");
+		expect(response.data).toEqual(Missingno);
+	});
 
-  it("should call [get] moves", done => {
-    PokemonService.get("https://pokeapi.co/api/v2/move/0").then(response => {
-      expect(response.data).toEqual(Move);
-      done();
-    });
-  });
+	it("should call a move with number 0", async () => {
+		const response = await PokeApi.get("https://pokeapi.co/api/v2/move/0");
+		expect(response.data).toEqual(Move);
+	});
 
-  it("should call [get] types", done => {
-    PokemonService.type().then(response => {
-      expect(response.data).toEqual(Types);
-      done();
-    });
-  });
+	it("should call all types with limit of 200", async () => {
+		const response = await PokeApi.type().all(200);
+		expect(response.data).toEqual(Types);
+	});
 
-  it("should call [get] type grass", done => {
-    PokemonService.type("grass").then(response => {
-      expect(response.data).toEqual(Type);
-      done();
-    });
-  });
+	it("should call all types with limit no limit", async () => {
+		const response = await PokeApi.type().all();
+		expect(response.data).toEqual(Types);
+	});
 
-  it("should call [get] pokemons", done => {
-    PokemonService.pokemon().then(response => {
-      expect(response.data).toEqual(List);
-      done();
-    });
-  });
+	it("should call type from name grass", async () => {
+		const response = await PokeApi.type().find_by_name("grass");
+		expect(response.data).toEqual(Type);
+	});
 
-  it("should call [get] pokemon with number 0", done => {
-    PokemonService.pokemon("0").then(response => {
-      expect(response.data).toEqual(Missingno);
-      done();
-    });
-  });
+	it("should call pokemon list with limit 10000", async () => {
+		const response = await PokeApi.pokemon().all(1000);
+		expect(response.data).toEqual(List);
+	});
 
-  it("should call [get] byName with missingno", done => {
-    PokemonService.byName("missingno").then(response => {
-      expect(response.data).toEqual(Missingno);
-      done();
-    });
-  });
+	it("should call pokemon list with no limit", async () => {
+		const response = await PokeApi.pokemon().all();
+		expect(response.data).toEqual(List);
+	});
+
+	it("should call pokemon with number 0", async () => {
+		const response = await PokeApi.pokemon().find(0);
+		expect(response.data).toEqual(Missingno);
+	});
+
+	it("should call pokemon with name missingno", async () => {
+		const response = await PokeApi.pokemon().find_by_name("missingno");
+		expect(response.data).toEqual(Missingno);
+	});
 });
