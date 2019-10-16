@@ -1,70 +1,65 @@
 @font-face {
-  font-family: "Visitor";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../visitor1.ttf") format("truetype");
+	font-family: "Visitor";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../visitor1.ttf") format("truetype");
 }
 
 body {
-  font-family: "Visitor";
-  text-align: center;
-  p {
-    color: #fff;
-  }
-  a {
-    color: #333;
-  }
+	font-family: "Visitor";
+	text-align: center;
+	overflow: hidden;
 }
 
 // RESETS
 *:focus {
-  outline: 0;
+	outline: 0;
 }
 
-// DEFAULT
-.App {
-  width: 60%;
-  min-width: 640px;
-  height: 820px;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  margin: 10px auto;
-  .nav {
-    width: 40%;
-    min-width: 248px;
-    margin: 0px 8px 0px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .pokemon {
-    margin: 0px 0px 0px 8px;
-    width: 60%;
-    min-width: 376px;
-  }
-}
-// RESPONSIVE
+// // DEFAULT
+// .App {
+// 	width: 60%;
+// 	min-width: 640px;
+// 	height: 1220px;
+// 	display: flex;
+// 	flex-direction: row;
+// 	position: relative;
+// 	margin: 10px auto;
+// 	.nav {
+// 		width: 40%;
+// 		min-width: 248px;
+// 		margin: 0px 8px 0px 0px;
+// 		display: flex;
+// 		flex-direction: column;
+// 		align-items: center;
+// 	}
+// 	.pokemon {
+// 		margin: 0px 0px 0px 8px;
+// 		width: 60%;
+// 		min-width: 376px;
+// 	}
+// }
+// // RESPONSIVE
 
-@media only screen and (max-width: 590px) {
-  .App {
-    width: calc(100vw - 16px);
-    min-width: calc(100vw - 16px);
-    flex-direction: column;
-    padding: 8px;
-    margin: 0px;
-    .nav,
-    .pokemon {
-      width: calc(100vw - 16px);
-      min-width: calc(100vw - 16px);
-      margin: 0px;
-    }
-  }
-}
+// @media only screen and (max-width: 590px) {
+// 	.App {
+// 		width: calc(100vw - 16px);
+// 		min-width: calc(100vw - 16px);
+// 		flex-direction: column;
+// 		padding: 8px;
+// 		margin: 0px;
+// 		.nav,
+// 		.pokemon {
+// 			width: calc(100vw - 16px);
+// 			min-width: calc(100vw - 16px);
+// 			margin: 0px;
+// 		}
+// 	}
+// }
 
-h5 {
-  margin: 10px 4px;
-  font-size: 18px;
-  padding-bottom: 4px;
-  text-align: left;
-}
+// h5 {
+//   margin: 10px 4px;
+//   font-size: 18px;
+//   padding-bottom: 4px;
+//   text-align: left;
+// }

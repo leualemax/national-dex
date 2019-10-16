@@ -1,96 +1,54 @@
-import * as React from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import * as DexActions from "../actions/dex.actions";
-
-import Filters from "./filters.component";
-import List from "./list.component";
-import Pokemon from "./pokemon.component";
-
-import IApp from "../models/app.model";
-import IDex from "../models/dex.model";
-
+import React from "react";
+import Pokemon from "./pokemon/index.component";
 import "./app.component.scss";
-import "./block.component.scss";
 
-interface IAppProps {
-  dex: IDex;
-  fetchPokemon: (url: string) => any;
-  fetchPokemons: () => any;
-  fetchTypes: (url?: string) => any;
-  filterPokemons: (query: string) => any;
-  selectPokemonByName: (name: string) => any;
-  fetchMove: (url?: string) => any;
-}
+import { Page } from "./styles/page.component.style";
+import styled from "styled-components";
+import { Provider } from 'react-redux';
+import store from 'src/store';
+import PokeFilters from './filter/index.components';
+
+export const AppStyle = styled.div`
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	box-sizing: border-box;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	justify-content: center;
+	padding: 20px 0px;
+
+	@media only screen and (max-width: 720px) {
+		width: 200vw;
+		padding: 0px;
+	}
+
+	${Page}:first-child {
+		display: flex;
+		flex-direction: column;
+	}
+`;
 
 interface IAppState {
-  type: string;
+	type: string;
 }
 
-export class App extends React.Component<IAppProps, IAppState> {
-  constructor(public props: IAppProps) {
-    super(props);
-    this.state = {
-      type: "select"
-    };
-    this.props.fetchPokemons();
-    this.props.fetchTypes();
-    this.props.selectPokemonByName("eevee");
-  }
+export default class App extends React.Component<any, IAppState> {
+	render() {
+		return (
 
-  public type = (event: any) => {
-    const query = event.target.value;
-    this.setState({ type: query });
-    if (query === "select") {
-      this.props.fetchPokemons();
-    } else {
-      this.props.fetchTypes(query);
-    }
-  };
-
-  public render() {
-    return (
-      <div className="App">
-        <div className="nav">
-          <h2>The National Dex</h2>
-          <Filters
-            list={this.props.dex.list}
-            type={this.state.type}
-            types={this.props.dex.types}
-            onFilter={this.props.filterPokemons}
-            onFetch={this.props.fetchPokemon}
-            onChangeType={this.type}
-          />
-
-          <List list={this.props.dex.list} load={this.props.fetchPokemon} />
-        </div>
-        <Pokemon
-          selected={this.props.dex.selected}
-          moveEffect={this.props.dex.showShortEffect}
-          changeMove={this.props.fetchMove}
-          changeType={this.type}
-          changePokemon={this.props.selectPokemonByName}
-        />
-      </div>
-    );
-  }
+			<Provider store={store}>
+				<AppStyle>
+					<Page direction='-' show={true}>
+						<PokeFilters />
+					</Page>
+					<Page direction='+' show={false}>
+						<Pokemon />
+					</Page>
+				</AppStyle>
+			</Provider>
+		);
+	}
 }
-
-export const mapStateToProps = (state: IApp) => {
-  return {
-    dex: state.dex
-  };
-};
-
-export const mapDispatchToProps = (dispatch: any) =>
-  bindActionCreators(
-    {
-      ...DexActions
-    },
-    dispatch
-  );
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);

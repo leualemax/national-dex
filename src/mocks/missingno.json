@@ -1,63 +1,67 @@
 {
-  "id": 0,
-  "height": 0,
-  "name": "Missingno",
-  "weight": 0,
-  "sprites": {
-    "front_default": "https://www.seekpng.com/png/full/343-3434964_missingno-sprite.png"
-  },
-  "moves": [
+  "abilities": [
     {
-      "move": {
-        "name": "light-metal",
-        "url": "https://pokeapi.co/api/v2/ability/0"
-      }
-    }
-  ],
-  "species": {
-    "url": "https://pokeapi.co/api/v2/pokemon-species/133",
-    "evolution_chain": {
-      "url": "https://pokeapi.co/api/v2/evolution-chain/1"
-    },
-    "flavor_text_entries": [
-      {
-        "flavor_text": "日なたで　昼寝を　する　姿を　見かける。↵太陽の　光を　いっぱい　浴びることで↵背中の　タネが　大きく　育つのだ。",
-        "language": { "name": "en" }
-      }
-    ]
-  },
-  "types": [
-    {
-      "type": {
-        "name": "metal",
-        "url": "https://pokeapi.co/api/v2/type/135"
+      "ability": {
+        "name": "imposter",
+        "url": "https://pokeapi.co/api/v2/ability/150/"
       },
+      "is_hidden": true,
       "slot": 3
-    },
-    {
-      "type": {
-        "name": "grass",
-        "url": "https://pokeapi.co/api/v2/type/135"
-      },
-      "slot": 2
     }
   ],
+  "base_experience": 101,
+  "forms": [
+    {
+      "name": "ditto",
+      "url": "https://pokeapi.co/api/v2/pokemon-form/132/"
+    }
+  ],
+  "game_indices": [
+    {
+      "game_index": 132,
+      "version": {
+        "name": "white-2",
+        "url": "https://pokeapi.co/api/v2/version/22/"
+      }
+    }
+  ],
+  "id": 0,
+  "is_default": true,
+  "location_area_encounters": null,
+  "name": "missingno",
+  "order": 0,
+  "species": {
+    "name": "missingno",
+    "url": null
+  },
+  "sprites": {
+    "back_default": "https://www.seekpng.com/png/full/343-3434964_missingno-sprite.png",
+    "back_female": null,
+    "back_shiny": null,
+    "back_shiny_female": null,
+    "front_default": null,
+    "front_female": null,
+    "front_shiny": null,
+    "front_shiny_female": null
+  },
   "stats": [
     {
-      "base_stat": 70,
+      "base_stat": 48,
       "effort": 0,
       "stat": {
         "name": "speed",
-        "url": "https://pokeapi.co/api/v2/stat/6"
-      }
-    },
-    {
-      "base_stat": 72,
-      "effort": 2,
-      "stat": {
-        "name": "speed 2",
-        "url": "https://pokeapi.co/api/v2/stat/6"
+        "url": "https://pokeapi.co/api/v2/stat/6/"
       }
     }
-  ]
+  ],
+  "types": [
+    {
+      "slot": 1,
+      "type": {
+        "name": "normal",
+        "url": "https://pokeapi.co/api/v2/type/1/"
+      }
+    }
+  ],
+  "weight": 0
 }

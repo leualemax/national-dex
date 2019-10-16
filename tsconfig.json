@@ -13,6 +13,7 @@
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",
+    "isolatedModules": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -26,7 +27,6 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "noEmit": true
   },
   "exclude": [
@@ -39,6 +39,7 @@
     "src/setupTests.ts"
   ],
   "include": [
-    "src"
+    "src",
+    "src/components/pokemon.old/.stats.component.tsx"
   ]
 }
