@@ -38,7 +38,7 @@
 		"@types/react-redux": "^7.1.4",
 		"@types/redux-promise": "^0.5.28",
 		"axios-mock-adapter": "^1.17.0",
-		"codecov": "^3.6.1",
+		"codecov": "^3.7.1",
 		"enzyme": "^3.10.0",
 		"enzyme-adapter-react-16": "^1.15.1",
 		"prettier": "^1.18.2",
